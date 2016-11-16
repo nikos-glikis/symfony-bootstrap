@@ -1,0 +1,2 @@
+app:
+    resource: '@CyCodersBootstrapStarterBundle/Resources/config/routing.yml'

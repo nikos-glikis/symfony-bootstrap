@@ -1,0 +1,10 @@
+cy_coders_bootstrap_starter_admin:
+    resource: "@CyCodersBootstrapStarterBundle/Controller/Admin/AdminController.php"
+    type:     annotation
+    prefix:   /admin/
+
+cy_coders_bootstrap_starter_admin_frontend:
+    resource: "@CyCodersBootstrapStarterBundle/Controller/FrontEnd/FrontEndController.php"
+    type:     annotation
+    prefix:   /
+
