@@ -22,7 +22,7 @@ class AdminController extends Controller
     {
         // create a task and give it some dummy data for this example
         $task = new Task();
-        $task->setTask('Write a blog post2');
+        $task->setTask('Do something');
         $task->setDueDate(new \DateTime('tomorrow'));
 
         $form =$this->createForm(TaskType::class, $task);

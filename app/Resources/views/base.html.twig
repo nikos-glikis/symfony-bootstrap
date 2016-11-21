@@ -24,40 +24,53 @@
 
 <body>
 <nav class="navbar navbar-fixed-top navbar-inverse  navbar-fixed-top" role="navigation">
-    <div class="navbar-header">
-        <a class="navbar-brand" href="#">WA Admin Panel</a>
-    </div>
-    <div>
-        <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Movies</a></li>
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    Series
-                    <b class="caret"></b>
-                </a>
+    {% block nav %}
+        <div class="navbar-header">
+            <a class="navbar-brand" href="./">WA Admin Panel</a>
+        </div>
+        <div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Menu</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        Another menu
+                        <b class="caret"></b>
+                    </a>
 
-                <ul class="dropdown-menu">
-                    <li><a href="#">Add Series</a></li>
-                    <li><a href="#">Add Episode</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Separated link</a></li>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Add Something</a></li>
+                        <li><a href="#">Add Something else</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
 
-                    <li class="divider"></li>
-                    <li><a href="#">One more separated link</a></li>
-                </ul>
+                        <li class="divider"></li>
+                        <li><a href="#">One more separated link</a></li>
+                    </ul>
 
-            </li>
-        </ul>
-    </div>
-    <form class="form-inline pull-right" style="padding: 10px">
-        <input class="form-control" type="text" placeholder="Search">
-        <button class="btn btn-primary" type="submit">Search</button>
-    </form>
-
+                </li>
+            </ul>
+        </div>
+        <form class="form-inline pull-right" style="padding: 10px">
+            <input class="form-control" type="text" placeholder="Search">
+            <button class="btn btn-primary" type="submit">Search</button>
+        </form>
+    {% endblock %}
 </nav>
 <div class="container theme-showcase" role="main">
     <div class="col-sm-3 sidebar">
-        {% block sidebar %}{% endblock %}
+        {% block sidebar %}
+            <ul class="nav nav-pills nav-stacked">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Some link 1</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Some link 2</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Some link 3</a>
+                </li>
+            </ul>
+        {% endblock %}
     </div>
     <div class="col-sm-9">
         {% block body %}
