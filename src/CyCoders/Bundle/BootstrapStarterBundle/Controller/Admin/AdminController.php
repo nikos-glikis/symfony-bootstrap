@@ -25,11 +25,20 @@ class AdminController extends Controller
         $task->setTask('Do something');
         $task->setDueDate(new \DateTime('tomorrow'));
 
-        $form =$this->createForm(TaskType::class, $task);
+        $form = $this->createForm(TaskType::class, $task);
 
         return $this->render('@CyCodersBootstrapStarter/pages/new.html.twig', array(
             'form' => $form->createView(),
         ));
+    }
+
+    /**
+     * @Route("/table_sample")
+     */
+    public function tableSampleAction()
+    {
+
+        return $this->render('@CyCodersBootstrapStarter/samples/table.sample.html.twig', array());
     }
 
     /*
@@ -42,7 +51,7 @@ class AdminController extends Controller
         $form = $this->createForm(ClientType::class, $client);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid())
+        if ($form->isSubmitted() &table.sample.html& $form->isValid())
         {
             $client = $form->getData();
 
