@@ -11,12 +11,12 @@ $folder1 = $company;
 $folder2 = $package;
 
 printLine("Package: " . $package);
-$currentBundleDirectory = __DIR__ . "/src/CyCoders/Bundle/WatchOnlineBundle";
+$currentBundleDirectory = __DIR__ . "/src/CyCoders/Bundle/BootstrapStarterBundle";
 $finalBundleDirectory = __DIR__ . '/src/' . $folder1 . '/Bundle/' . $folder2 . 'Bundle';
 mkdir($finalBundleDirectory, 755, true);
 system("rsync -av $currentBundleDirectory/ $finalBundleDirectory/");
 
-$oldNamespace = "CyCoders\\Bundle\\WatchOnlineBundle";
+$oldNamespace = "CyCoders\\Bundle\\BootstrapStarterBundle";
 $newNamespace = "$folder1\\Bundle\\{$folder2}Bundle";
 
 $new_snail_case_name = from_camel_case("$folder1$folder2");
@@ -32,37 +32,37 @@ foreach ($files as $file)
         $fileContents = file_get_contents($file);
 
         $fileContents = str_replace($oldNamespace, $newNamespace, $fileContents);
-        $fileContents = str_replace('cy_coders_watch_online', $new_snail_case_name, $fileContents);
-        $fileContents = str_replace('CyCodersWatchOnlineBundle', $bundleName, $fileContents);
-        $fileContents = str_replace('CyCodersWatchOnline', $bundleNameShort, $fileContents);
+        $fileContents = str_replace('cy_coders_bootstrap_starter', $new_snail_case_name, $fileContents);
+        $fileContents = str_replace('CyCodersBootstrapStarterBundle', $bundleName, $fileContents);
+        $fileContents = str_replace('CyCodersBootstrapStarter', $bundleNameShort, $fileContents);
         file_put_contents($file, $fileContents);
     }
 }
 
 $bundleFilename = $finalBundleDirectory . "/$bundleName.php";
-rename($finalBundleDirectory . "/CyCodersWatchOnlineBundle.php", $bundleFilename);
+rename($finalBundleDirectory . "/CyCodersBootstrapStarterBundle.php", $bundleFilename);
 
 //Replace class name
 
 file_put_contents(
     $bundleFilename,
-    str_replace('CyCodersWatchOnlineBundle', $bundleName, file_get_contents($finalBundleDirectory . "/$bundleName.php"))
+    str_replace('CyCodersBootstrapStarterBundle', $bundleName, file_get_contents($finalBundleDirectory . "/$bundleName.php"))
 );
 
 
 file_put_contents(
     "app/config/config.yml",
-    str_replace('CyCodersWatchOnlineBundle', $bundleName, file_get_contents("app/config/config.yml"))
+    str_replace('CyCodersBootstrapStarterBundle', $bundleName, file_get_contents("app/config/config.yml"))
 );
 
 file_put_contents(
     "app/config/routing.yml",
-    str_replace('CyCodersWatchOnlineBundle', $bundleName, file_get_contents("app/config/routing.yml"))
+    str_replace('CyCodersBootstrapStarterBundle', $bundleName, file_get_contents("app/config/routing.yml"))
 );
 
 file_put_contents(
     "app/config/routing.yml",
-    str_replace('cy_coders_watch_online', $bundleName, file_get_contents("app/config/routing.yml"))
+    str_replace('cy_coders_bootstrap_starter', $bundleName, file_get_contents("app/config/routing.yml"))
 );
 
 $appKernelOldName = __DIR__ . '/app/AppKernel.php';
@@ -72,7 +72,7 @@ $appKernelNewName = __DIR__ . '/app/AppKernel.php';
 $appKernelOldContent = file_get_contents($appKernelOldName);
 $appKernelNewContent = str_replace($oldNamespace, $newNamespace, $appKernelOldContent);
 
-$appKernelNewContent = str_replace('CyCodersWatchOnlineBundle', $bundleName, $appKernelNewContent);
+$appKernelNewContent = str_replace('CyCodersBootstrapStarterBundle', $bundleName, $appKernelNewContent);
 file_put_contents($appKernelNewName, $appKernelNewContent);
 
 function printLine($text = "")
