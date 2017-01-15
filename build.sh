@@ -19,6 +19,8 @@ else
     php bin/console assetic:dump --env=dev --no-debug
     php bin/console assetic:dump --env=test --no-debug
 
+    php app/console assets:install web
+
     # clear all sessions
     rm -rf var/sessions/dev/
     rm -rf var/sessions/prod/

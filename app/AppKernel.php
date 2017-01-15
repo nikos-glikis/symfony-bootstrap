@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
             new CyCoders\Bundle\BootstrapStarterBundle\CyCodersBootstrapStarterBundle(),
+            new Bmatzner\JQueryUIBundle\BmatznerJQueryUIBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {
