@@ -4,7 +4,7 @@ if [ -n "$1" ]
 then
     rm -rf var/cache/$1/
     rm -rf var/sessions/$1/
-    php bin/console doctrine:schema:update --force --env=$1
+    php app/console doctrine:schema:update --force --env=$1
 else
     # clear all cache
     php app/console cache:clear --env=prod --no-debug
@@ -15,9 +15,9 @@ else
     php app/console cache:warmup --env=dev --no-debug
     php app/console cache:warmup --env=test --no-debug
 
-    php bin/console assetic:dump --env=prod --no-debug
-    php bin/console assetic:dump --env=dev --no-debug
-    php bin/console assetic:dump --env=test --no-debug
+    php app/console assetic:dump --env=prod --no-debug
+    php app/console assetic:dump --env=dev --no-debug
+    php app/console assetic:dump --env=test --no-debug
 
     php app/console assets:install web
 
