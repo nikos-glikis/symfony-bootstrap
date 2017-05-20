@@ -7,12 +7,12 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">
-      <library name="PHARS">
+      <library name="PHP" type="php">
         <CLASSES>
-          <root url="phar://$MODULE_DIR$/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Tests/Fixtures/includes/ProjectWithXsdExtensionInPhar.phar/" />
+          <root url="jar://$APPLICATION_PLUGINS_DIR$/phpstorm-library-plugin.jar!/Phalcon/Phalcon" />
         </CLASSES>
         <SOURCES>
-          <root url="phar://$MODULE_DIR$/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Tests/Fixtures/includes/ProjectWithXsdExtensionInPhar.phar/" />
+          <root url="jar://$APPLICATION_PLUGINS_DIR$/phpstorm-library-plugin.jar!/Phalcon/Phalcon" />
         </SOURCES>
       </library>
     </orderEntry>
