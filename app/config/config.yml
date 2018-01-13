@@ -35,8 +35,8 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
-    form:
-        resources: ['bootstrap_3_layout.html.twig']
+    form_themes:
+        resources: 'bootstrap_3_layout.html.twig'
 
 # Doctrine Configuration
 doctrine:
@@ -87,5 +87,5 @@ assetic:
     filters:
         lessphp:
              file: %kernel.root_dir%/../vendor/oyejorge/less.php/lessc.inc.php
-             apply_to: "\.less$"
+             #apply_to: "\.less$"
         cssrewrite: ~
